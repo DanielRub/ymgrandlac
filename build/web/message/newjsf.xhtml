@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="../template.xhtml">
+        <ui:define name="head">
+            <meta charset="UTF-8" />
+            <title>communiqués</title>
+            <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+            <!-- bootstrap 3.0.2 -->
+            <h:outputStylesheet library="css" name="bootstrap.min.css" />
+            <!-- font Awesome -->
+            <h:outputStylesheet  library="css" name="font-awesome.min.css"  />
+            <!-- Ionicons -->
+            <h:outputStylesheet  library="css" name="ionicons.min.css"  />
+
+            <!-- Theme style -->
+            <h:outputStylesheet  library="css" name="AdminLTE.css"  />
+
+            <!-- Fla-ui -->
+
+
+
+            <!-- wizard -->
+
+            <link rel="stylesheet" type="text/css" href="../resources/css/jQueryUI/jquery-ui-1.10.3.custom.css" />
+
+            <link rel="stylesheet" type="text/css" href="../resources/tags/jquery.tagsinput.css" />
+
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <![endif]--> 
+        </ui:define>
+        <ui:define name="content">
+
+            <aside class="right-side">
+
+                <form>
+                    <p><label>Defaults:</label>
+                        <h:inputText id="tags_1"  class="tags" value="#{parent.telNumber}" />
+                    </p>
+
+                    <p><label>Technologies: (Programming languages in yellow)</label>
+                        <input id="tags_2"  type="text" class="tags" value="php,ios,javascript,ruby,android,kindle" /></p>
+
+                    <p><label>Autocomplete:</label>
+                        <input id='tags_3' type='text' class='tags'/></p>
+                    <h:form>
+                        <p:commandButton value="send" actionListener="#{parent.sendmessage()}"/>
+                    </h:form>
+
+                </form>   
+
+
+            </aside>
+
+
+
+
+        </ui:define>
+
+
+        <ui:define name="script">
+
+            <!-- jQuery 2.0.2 -->
+            <script src="../resources/js/jquery-2.0.2.min.js"/>
+            <!--
+                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+            -->       <!-- Bootstrap -->
+            <script src="../resources/js/bootstrap.min.js" />
+            <!-- AdminLTE App -->
+            <script src="../resources/js/AdminLTE/app.js" />
+            <!-- AdminLTE for demo purposes -->
+            <script  src="../resources/js/AdminLTE/demo.js" />  
+
+
+            <script type="text/javascript" src="../resources/tags/jquery.tagsinput.js"></script>
+            <!-- To test using the original jQuery.autocomplete, uncomment the following -->
+            <!--
+            <script type='text/javascript' src='http://xoxco.com/x/tagsinput/jquery-autocomplete/jquery.autocomplete.min.js'></script>
+            <link rel="stylesheet" type="text/css" href="http://xoxco.com/x/tagsinput/jquery-autocomplete/jquery.autocomplete.css" />
+            -->
+            <script type='text/javascript' src='../resources/js/jquery-ui.min.js'></script>
+
+
+            <script type="text/javascript">
+
+                function onAddTag(tag) {
+                    alert("Added a tag: " + tag);
+                }
+                function onRemoveTag(tag) {
+                    alert("Removed a tag: " + tag);
+                }
+
+                function onChangeTag(input, tag) {
+                    alert("Changed a tag: " + tag);
+                }
+
+                $(function () {
+
+                    $('#tags_1').tagsInput({width: 'auto'});
+                    $('#tags_2').tagsInput({
+                        width: 'auto',
+                        onChange: function (elem, elem_tags)
+                        {
+                            var languages = ['php', 'ruby', 'javascript'];
+                            $('.tag', elem_tags).each(function ()
+                            {
+                                if ($(this).text().search(new RegExp('\\b(' + languages.join('|') + ')\\b')) >= 0)
+                                    $(this).css('background-color', 'yellow');
+                            });
+                        }
+                    });
+                    $('#tags_3').tagsInput({
+                        width: 'auto',
+                        //autocomplete_url:'test/fake_plaintext_endpoint.html' //jquery.autocomplete (not jquery ui)
+                        autocomplete_url: 'test/fake_json_endpoint.html' // jquery ui autocomplete requires a json endpoint
+                    });
+
+
+                    // Uncomment this line to see the callback functions in action
+                    //			$('input.tags').tagsInput({onAddTag:onAddTag,onRemoveTag:onRemoveTag,onChange: onChangeTag});
+
+                    // Uncomment this line to see an input with no interface for adding new tags.
+                    //			$('input.tags').tagsInput({interactive:false});
+                });
+
+            </script>
+
+        </ui:define>
+
+    </ui:composition>
+</html>
+

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <ui:insert name="head">
+        </ui:insert>  
+    </h:head>
+    <h:body class="skin-blue">
+
+        <ui:insert name="center">
+            <!-- header logo: style can be found in header.less -->
+            <header class="header">
+                <h:form>
+                    <h:link outcome="/dashboard/dashboard.xhtml" class="logo">
+
+                        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                        IM Grand Lacs
+                    </h:link>
+                </h:form>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <h:form>
+                        <div class="navbar-right">
+                            <ul class="nav navbar-nav">
+                                <ui:remove>
+                                    <!-- Messages: style can be found in dropdown.less-->
+                                    <li class="dropdown messages-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-envelope"></i>
+                                            <span class="label label-danger">4</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="header">Total messages envoyés : 4</li>
+                                            <li>
+                                                <!-- inner menu: contains the actual data -->
+                                                <ul class="menu">
+                                                    <li><!-- start message -->
+                                                        <a href="#">
+                                                            <div class="pull-left">
+                                                                <img src="resources/img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                            </div>
+                                                            <h4>
+                                                                Aux parents
+                                                                <small><i class="fa fa-clock-o"></i> 12 mars 2016</small>
+                                                            </h4>
+                                                            <p>chers parents vous êtes conviés à..</p>
+                                                        </a>
+                                                    </li><!-- end message -->
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="pull-left">
+                                                                <img src="resources/img/avatar2.png" class="img-circle" alt="user image"/>
+                                                            </div>
+                                                            <h4>
+                                                                Au personnel
+                                                                <small><i class="fa fa-clock-o"></i> 12 mars 2015</small>
+                                                            </h4>
+                                                            <p>Le RDV a été annulé</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="pull-left">
+                                                                <img src="resources/img/avatar.png" class="img-circle" alt="user image"/>
+                                                            </div>
+                                                            <h4>
+                                                                Aux Etudiants
+                                                                <small><i class="fa fa-clock-o"></i> 12 mars 2014</small>
+                                                            </h4>
+                                                            <p>Les dossiers doivent etre remis avant..</p>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="footer"><a href="#">Voir tous les messages</a></li>
+                                        </ul>
+                                    </li>
+                                </ui:remove>
+
+                                <!-- Notifications: style can be found in dropdown.less -->
+
+                                <ui:remove>
+                                    <li class="dropdown notifications-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-warning"></i>
+                                            <span class="label label-danger">10</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="header">Total notifications : 2</li>
+                                            <li>
+                                                <!-- inner menu: contains the actual data -->
+                                                <ul class="menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="ion ion-ios7-people info"></i> 256 messages  ont été envoyés
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-warning danger"></i> 12 messages n'ont pas pu être envoyés
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="footer"><a href="#">Effacer les notifications</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Tasks: style can be found in dropdown.less -->
+                                    <li class="dropdown tasks-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-tasks"></i>
+                                            <span class="label label-danger">3</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="header">Taches en cours d'exécution</li>
+                                            <li>
+                                                <!-- inner menu: contains the actual data -->
+                                                <ul class="menu">
+                                                    <li><!-- Task item -->
+                                                        <a href="#">
+                                                            <h3>
+                                                                Déjà envoyés
+                                                                <small class="pull-right">20%</small>
+                                                            </h3>
+                                                            <div class="progress xs">
+                                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                    <span class="sr-only">20% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li><!-- end task item -->
+                                                    <li><!-- Task item -->
+                                                        <a href="#">
+                                                            <h3>
+                                                                En cours d'envoi
+                                                                <small class="pull-right">40%</small>
+                                                            </h3>
+                                                            <div class="progress xs">
+                                                                <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                    <span class="sr-only">40% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li><!-- end task item -->
+                                                    <li><!-- Task item -->
+                                                        <a href="#">
+                                                            <h3>
+                                                                Non rémis
+                                                                <small class="pull-right">60%</small>
+                                                            </h3>
+                                                            <div class="progress xs">
+                                                                <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                    <span class="sr-only">60% Complete</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li><!-- end task item -->
+
+                                                </ul>
+                                            </li>
+                                            <li class="footer">
+                                                <a href="#">Tâches en cours d'execution</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ui:remove>
+                                <!-- User Account: style can be found in dropdown.less -->
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        <span>Jane Doe <i class="caret"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- User image -->
+
+                                        <li class="user-header bg-light-blue">
+                                            <ui:remove>
+                                                <p:graphicImage  library="img" name="avatar04.png" class="img-circle" alt="User Image" />
+                                            </ui:remove>
+                                            <p>
+                                                John Doe - Admin
+                                                <small>IM Grands Lacs</small>
+                                            </p>
+                                        </li>
+                                        <!-- Menu Body -->
+                                        <li class="user-body">
+                                            <div class="col-xs-4 text-center">
+                                                <p:link outcome="/production/gerer_production.xhtml" value=" Production"  />
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <p:link  value="Distribution" />                                        </div>
+                                            <div class="col-xs-4 text-center">
+                                                <p:link  value="Révenus" />                                        </div>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            <div class="pull-left">
+                                                <h:link class="btn btn-default btn-flat" outcome="/profil.xhtml" value="Paramètres"/>
+                                            </div>
+                                            <div class="pull-right">
+                                                <h:commandLink class="btn btn-default btn-flat" action="#{login.logout}"  value="Déconnexion"/>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </h:form>
+                </nav>
+            </header>
+            <div class="wrapper row-offcanvas row-offcanvas-left">
+
+
+                <!-- Left side column. contains the logo and sidebar -->
+                <ui:insert name="content_left">
+                    <aside class="left-side sidebar-offcanvas">                
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+
+                            <div class="user-panel">
+                                <ui:remove>
+                                    <div class="pull-left image">
+                                        <p:graphicImage  library="img" name="avatar04.png" class="img-circle" alt="User Image" />
+                                    </div>
+                                    <div class="pull-left info">
+                                        <p>Bonjour, John</p>
+
+                                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                    </div>
+                                </ui:remove>  
+                            </div>
+
+                            <!-- search form -->
+
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <h:form>
+                                <ul class="sidebar-menu">
+                                    <li class="active">
+                                        <p:link class="fa fa-home" outcome="/dashboard/dashboard.xhtml" value=" Accueil"  />
+
+                                    </li>
+                                    <li class="treeview">
+
+                                        <li>
+                                            <p:link class="fa fa-tasks" outcome="/production/gerer_production.xhtml" value=" Production"  />
+
+                                        </li>
+                                    </li>
+                                    <li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-users"></i>
+                                            <span>Distribution</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+
+                                        <ul class="treeview-menu">
+                                            <li><p:link outcome="/distribution/obf.xhtml" value="OBF" /></li>
+                                            <li><p:link outcome="/distribution/registre.xhtml" value="Registre" /></li>
+                                            <li><p:link outcome="/distribution/heure_service.xhtml" value="Heure Service" /></li>
+                                            <li><p:link outcome="/distribution/paiement_obf.xhtml" value="Paiment" /></li>
+                                        </ul>
+                                    </li>
+                                    <li><p:link class="fa fa-money"  value=" Révenus"  />
+                                    </li>
+
+
+
+                                </ul>
+                            </h:form>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+                </ui:insert>
+                <!-- Right side column. Contains the navbar and content of the page -->
+                <ui:insert name="content">
+
+                </ui:insert>
+
+
+            </div><!-- ./wrapper -->
+        </ui:insert>
+        <ui:insert name="other-content">
+
+        </ui:insert>
+        <ui:insert name="script">
+
+        </ui:insert>
+    </h:body>
+</html>
